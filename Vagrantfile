@@ -4,7 +4,8 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/stretch64"
 
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "forwarded_port", guest: 8200, host: 8200
+  #config.vm.network "private_network", ip: "192.168.33.10"
 
   config.vbguest.auto_update = false
 
